@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_Invaders_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="600" Width="1350" KeyDown="Window_KeyDown">
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="SpaceCanvas" HorizontalAlignment="Left" Height="569" VerticalAlignment="Stretch" Width="1128">
+            <Image x:Name="Alien1" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="425" Canvas.Top="9"/>
+            <Image x:Name="Alien3" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="209" Canvas.Top="10"/>
+            <Image x:Name="Alien4" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="525" Canvas.Top="10"/>
+            <Image x:Name="Alien10" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="925" Canvas.Top="9"/>
+            <Image x:Name="Alien9" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="825" Canvas.Top="10"/>
+            <Image x:Name="Alien_8" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="10" Canvas.Top="9"/>
+            <Image x:Name="Alien7" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="109" Canvas.Top="9"/>
+            <Image x:Name="Alien6" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="725" Canvas.Top="10"/>
+            <Image x:Name="Alien5" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="625" Canvas.Top="10"/>
+            <Image x:Name="Alien2" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="314" Canvas.Top="9"/>
+            <Image x:Name="SpaceShip" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="76" Source="SpaceShip One.png" Canvas.Left="563" Canvas.Top="459"/>
+        </Canvas>
+        <Label x:Name="lblStageNumber" Content="STAGE 1" HorizontalAlignment="Left" Margin="1128,0,0,0" VerticalAlignment="Top" Height="59" Width="214" Background="#FF535353" FontFamily="Showcard Gothic" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="lblHighScore" Content="SCORE: 0" HorizontalAlignment="Left" Margin="1128,90,0,0" VerticalAlignment="Top" Height="59" Width="214" Background="#FF302E2E" FontSize="24"/>
+        <Image x:Name="Live1" HorizontalAlignment="Left" Height="49" Margin="1133,229,0,0" VerticalAlignment="Top" Width="55" Source="SpaceShip One.png"/>
+        <Image x:Name="Live2" HorizontalAlignment="Left" Height="49" Margin="1193,229,0,0" VerticalAlignment="Top" Width="55" Source="SpaceShip One.png"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="49" Margin="1253,229,0,0" VerticalAlignment="Top" Width="55" Source="SpaceShip One.png"/>
+        <Label x:Name="lblLife" Content="LIVES" HorizontalAlignment="Left" Margin="1128,170,0,0" VerticalAlignment="Top" Height="40" Width="214" Background="#FF615A5A" FontSize="20"/>
+
     </Grid>
 </Window>

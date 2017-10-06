@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Aliens.cs" />
+    <Compile Include="BossAlien.cs" />
+    <Compile Include="SpaceShip.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +97,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bullets_PNG1471.png" />
+    <Resource Include="Gold Alien.png" />
+    <Resource Include="Green Alien.png" />
+    <Resource Include="SpaceShip One.png" />
+    <Resource Include="SpaceShip Two.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

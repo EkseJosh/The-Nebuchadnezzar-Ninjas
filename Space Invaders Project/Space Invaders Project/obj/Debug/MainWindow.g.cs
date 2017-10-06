@@ -215,65 +215,57 @@ namespace Space_Invaders_Project {
             switch (connectionId)
             {
             case 1:
-            
-            #line 8 "..\..\MainWindow.xaml"
-            ((Space_Invaders_Project.MainWindow)(target)).KeyDown += new System.Windows.Input.KeyEventHandler(this.Window_KeyDown);
-            
-            #line default
-            #line hidden
-            return;
-            case 2:
             this.SpaceCanvas = ((System.Windows.Controls.Canvas)(target));
             return;
-            case 3:
+            case 2:
             this.Alien1 = ((System.Windows.Controls.Image)(target));
             return;
-            case 4:
+            case 3:
             this.Alien3 = ((System.Windows.Controls.Image)(target));
             return;
-            case 5:
+            case 4:
             this.Alien4 = ((System.Windows.Controls.Image)(target));
             return;
-            case 6:
+            case 5:
             this.Alien10 = ((System.Windows.Controls.Image)(target));
             return;
-            case 7:
+            case 6:
             this.Alien9 = ((System.Windows.Controls.Image)(target));
             return;
-            case 8:
+            case 7:
             this.Alien_8 = ((System.Windows.Controls.Image)(target));
             return;
-            case 9:
+            case 8:
             this.Alien7 = ((System.Windows.Controls.Image)(target));
             return;
-            case 10:
+            case 9:
             this.Alien6 = ((System.Windows.Controls.Image)(target));
             return;
-            case 11:
+            case 10:
             this.Alien5 = ((System.Windows.Controls.Image)(target));
             return;
-            case 12:
+            case 11:
             this.Alien2 = ((System.Windows.Controls.Image)(target));
             return;
-            case 13:
+            case 12:
             this.SpaceShip = ((System.Windows.Controls.Image)(target));
             return;
-            case 14:
+            case 13:
             this.lblStageNumber = ((System.Windows.Controls.Label)(target));
             return;
-            case 15:
+            case 14:
             this.lblHighScore = ((System.Windows.Controls.Label)(target));
             return;
-            case 16:
+            case 15:
             this.Live1 = ((System.Windows.Controls.Image)(target));
             return;
-            case 17:
+            case 16:
             this.Live2 = ((System.Windows.Controls.Image)(target));
             return;
-            case 18:
+            case 17:
             this.image = ((System.Windows.Controls.Image)(target));
             return;
-            case 19:
+            case 18:
             this.lblLife = ((System.Windows.Controls.Label)(target));
             return;
             }
