@@ -21,11 +21,6 @@ namespace Space_Invaders_Project
 
         }
 
-        public void attack()
-        {
-            velocityX = 0;    //velocity before attack
-            velocityY = 5; // velocity while attacking
-            velocityY = 0; // velocity return to normal for normal movemnt
-        }
+      
     }
 }

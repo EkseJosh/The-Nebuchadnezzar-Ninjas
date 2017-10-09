@@ -13,7 +13,7 @@ namespace Space_Invaders_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        int level;
         DispatcherTimer timer;
 
         Aliens alien1;
@@ -29,26 +29,27 @@ namespace Space_Invaders_Project
 
         SpaceShip ship;
         bool isShot = false;
-        
+
         double SpaceshipXPos = 563; // left of spaceship relative to canvas (starting).
         double SpaceShipYPos = 510; // top of spaceship image relative to canvas...Must Not be changed.
 
 
         int velocityY = 3; // alien velocity variables
-        int velocityX = 3; 
+        int velocityX = 3;
 
         int score = 0;
         BitmapImage[] AlienPics;
         // This is tells C# to find the images "in this application" ...
-        
+
 
 
 
         public MainWindow()
         {
             InitializeComponent();
+           
+            level = 1;
 
-            
             Canvas.SetLeft(SpaceShip, SpaceshipXPos);
             Canvas.SetTop(SpaceShip, SpaceShipYPos);
 
@@ -61,7 +62,7 @@ namespace Space_Invaders_Project
             timer.IsEnabled = true;
             timer.Tick += Timer_Tick;
 
-            
+
 
             // initialization of spaceship object 
             ship = new SpaceShip();
@@ -106,25 +107,63 @@ namespace Space_Invaders_Project
             spaceShipMove(ship);
             updateBullet();
             updateScore();
-            
+            AlienHitsSpaceship();
+            updateLives();
+
+        }
+
+        private void updateLives()
+        {
+           if(ship.lives == 2)
+            {
+                SpaceLife3.Visibility = Visibility.Hidden;
+            }
+           if(ship.lives == 1)
+            {
+                SpaceLife2.Visibility = Visibility.Hidden;
+            }
+           if(ship.lives ==0)
+            {
+
+                resetPositions();
+                timer.IsEnabled = false;
+
+            }
+        }
+
+        private void updateScore()
+        {
+
+            txtScore.Text = $"SCORE: {score}";
+            if(score == 100 && level ==1)
+            {
+                // updates level
+
+                level++;
+                timer.IsEnabled = false;
+                resetPositions();
+                
+                txtStageNum.Text = $" STAGE {level}";
+                
+                timer.IsEnabled = true;
+
+
+
+
+
+            }
         }
 
        
 
-        private void updateScore()
+        public void UpdateAlienMovement(Image alien)
         {
-            
-            txtScore.Text = $"SCORE: {score}";
-        }
 
-        public void UpdateAlienMovement( Image alien)
-        {
-            
-          
+
             double nextY, nextX = 0;
-            
-             nextY = Canvas.GetTop(alien) + velocityY;
-             nextX = Canvas.GetLeft(alien) + velocityX;
+
+            nextY = Canvas.GetTop(alien) + velocityY;
+            nextX = Canvas.GetLeft(alien) + velocityX;
 
             if ((nextX <= 0 && velocityX < 0) || ((nextX >= SpaceCanvas.ActualWidth - alien.ActualWidth) && velocityX > 0))
 
@@ -136,13 +175,13 @@ namespace Space_Invaders_Project
 
             {
                 velocityY = -(velocityY);
-               
+
 
             }
 
             Canvas.SetLeft(alien, nextX);
             Canvas.SetTop(alien, nextY);
-            
+
 
 
 
@@ -163,41 +202,41 @@ namespace Space_Invaders_Project
             }
         }
 
-        
-                    
 
-        
+
+
+
 
         private void updateBullet()
         {
-            if(isShot == false)
+            if (isShot == false)
             {
-                Canvas.SetTop(laser, 78);
-                Canvas.SetLeft(laser, Canvas.GetLeft(SpaceShip) + 25);
+                Canvas.SetTop(laser, 125);
+                Canvas.SetLeft(laser, Canvas.GetLeft(SpaceShip) + 24);
                 Canvas.SetTop(bullet, 459);
                 Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-               
+
             }
-            else 
+            else
             {
                 laser.Visibility = Visibility.Visible;
-               
+
                 double nextY = Canvas.GetTop(bullet);
-                Canvas.SetTop(bullet, nextY +2);
-             
+                Canvas.SetTop(bullet, nextY + 2);
+
 
                 if ((Alien1.Visibility != Visibility.Hidden) && bulletCollidesWithAlien(Alien1))
                 {
-                    if(alien1.state == alienState.Normal && alien1.lives >0)
+                    if (alien1.state == alienState.Normal && alien1.lives > 0)
                     {
 
                         Alien1.Source = AlienPics[1];
                         alien1.state = alienState.Weakened;
                         alien1.lives--;
-                        
+
                     }
 
-                    else if(alien1.state == alienState.Weakened && alien1.lives >0)
+                    else if (alien1.state == alienState.Weakened && alien1.lives > 0)
                     {
                         alien1.lives--;
                         if (alien1.lives == 0)
@@ -206,7 +245,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -219,13 +258,13 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
-                        
-                          
-                    
-                    
-                    
+
+
+
+
+
                 }
                 else if ((Alien2.Visibility != Visibility.Hidden) && bulletCollidesWithAlien(Alien2))
                 {
@@ -248,7 +287,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -261,7 +300,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -286,7 +325,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -299,7 +338,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -325,7 +364,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -338,7 +377,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -363,7 +402,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -376,7 +415,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -402,7 +441,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -415,7 +454,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -441,7 +480,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -454,7 +493,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -480,7 +519,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -493,7 +532,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -519,7 +558,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -532,7 +571,7 @@ namespace Space_Invaders_Project
 
                         Canvas.SetTop(bullet, 459);
                         Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                        score++;
+                        score+=10;
                     }
 
 
@@ -558,7 +597,7 @@ namespace Space_Invaders_Project
 
                             Canvas.SetTop(bullet, 459);
                             Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
-                            score++;
+                            score+=10;
                         }
                         else
                         {
@@ -590,7 +629,7 @@ namespace Space_Invaders_Project
                 }
 
             }
-            
+
         }
 
         // detection of bullet with alien
@@ -603,24 +642,37 @@ namespace Space_Invaders_Project
             double alienX = leftalien + alien.ActualHeight;
             double ta = Canvas.GetTop(alien);
             bool hits = bulletX >= leftalien && bulletX < alienX && bulletY >= ta;
-            
+
             isShot = false;
             return hits;
         }
 
-        
+
+        public bool alienCollidesWithSpaceShip(Image alien)
+        {
+            double alienX = Canvas.GetLeft(alien) + alien.ActualWidth / 2.0;
+            double alienY = Canvas.GetTop(alien) + alien.ActualHeight;
+
+            double pX0 = Canvas.GetLeft(SpaceShip);
+            double pX1 = pX0 + SpaceShip.ActualHeight;
+            double pY = Canvas.GetTop(SpaceShip);
+
+            bool hits = alienX >= pX0 && alienX < pX1 && alienY >= pY;
+
+            return hits;
+        }
 
 
         // method for movement of spaceship
         private void spaceShipMove(SpaceShip s)
         {
             double nextX = Canvas.GetLeft(SpaceShip);
-            switch(s.state)
+            switch (s.state)
             {
                 case Movement.Left:
                     if (nextX > 0)
                     {
-                        Canvas.SetLeft(SpaceShip, nextX-ship.velocityX);
+                        Canvas.SetLeft(SpaceShip, nextX - ship.velocityX);
                         System.Threading.Thread.Sleep(2);
                         laser.Visibility = Visibility.Hidden; break;
                     }
@@ -646,12 +698,12 @@ namespace Space_Invaders_Project
                         break;
                     }
 
-                
+
 
 
             }
-            
-           
+
+
 
         }
 
@@ -660,6 +712,178 @@ namespace Space_Invaders_Project
             ship.state = Movement.Stopped;
         }
 
-        
+
+        public void AlienHitsSpaceship()
+        {
+            if ((Alien1.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien1))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+                
+              
+
+            }
+            else if((Alien2.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien2))
+            {
+               
+                ship.lives--;
+
+                resetPositions();
+                
+               
+                
+            }
+            else if ((Alien3.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien3))
+            {
+               
+                ship.lives--;
+                resetPositions();
+                
+               
+                
+            }
+            else if ((Alien4.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien4))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+                
+               
+            }
+            else if ((Alien5.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien5))
+            {
+               
+                ship.lives--;
+                resetPositions();
+                
+              
+                
+            }
+            else if ((Alien6.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien6))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+
+                System.Threading.Thread.Sleep(5000);
+                
+            }
+            else if ((Alien7.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien7))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+                
+               
+            }
+            else if ((Alien8.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien8))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+               
+                
+            }
+            else if ((Alien9.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien9))
+            {
+                
+                ship.lives--;
+                resetPositions();
+               
+               
+                
+            }
+            else if ((Alien10.Visibility != Visibility.Hidden) && alienCollidesWithSpaceShip(Alien10))
+            {
+                
+                ship.lives--;
+                resetPositions();
+                
+                
+                
+            }
+        }
+
+        private void resetPositions()
+        {
+            // resets spaceship positions
+            Canvas.SetLeft(SpaceShip, SpaceshipXPos);
+            Canvas.SetTop(SpaceShip, SpaceShipYPos);
+
+            // reset bullet and laser image
+            Canvas.SetTop(laser, 125);
+            Canvas.SetLeft(laser, Canvas.GetLeft(SpaceShip) + 24);
+            Canvas.SetTop(bullet, 459);
+            Canvas.SetLeft(bullet, Canvas.GetLeft(SpaceShip) + 22);
+
+            // reset alien positions
+            Canvas.SetTop(Alien1, 10);
+            Canvas.SetLeft(Alien1, 425);
+            alien1.state = alienState.Normal;
+            Alien1.Source = AlienPics[0];
+            Alien1.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien2, 10);
+            Canvas.SetLeft(Alien2, 314);
+            alien2.state = alienState.Normal;
+            Alien2.Source = AlienPics[0];
+            Alien2.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien3, 10);
+            Canvas.SetLeft(Alien3, 209);
+            alien3.state = alienState.Normal;
+            Alien3.Source = AlienPics[0];
+            Alien3.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien4, 10);
+            Canvas.SetLeft(Alien8, 525);
+            alien4.state = alienState.Normal;
+            Alien4.Source = AlienPics[0];
+            Alien4.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien5, 10);
+            Canvas.SetLeft(Alien5, 625);
+            alien5.state = alienState.Normal;
+            Alien5.Source = AlienPics[0];
+            Alien5.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien6, 10);
+            Canvas.SetLeft(Alien6, 725);
+            alien6.state = alienState.Normal;
+            Alien6.Source = AlienPics[0];
+            Alien6.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien7, 10);
+            Canvas.SetLeft(Alien7, 109);
+            alien7.state = alienState.Normal;
+            Alien7.Source = AlienPics[0];
+            Alien7.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien8, 10);
+            Canvas.SetLeft(Alien8, 10);
+            alien8.state = alienState.Normal;
+            Alien8.Source = AlienPics[0];
+            Alien8.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien9, 10);
+            Canvas.SetLeft(Alien9, 825);
+            alien9.state = alienState.Normal;
+            Alien9.Source = AlienPics[0];
+            Alien9.Visibility = Visibility.Visible;
+
+            Canvas.SetTop(Alien10, 10);
+            Canvas.SetLeft(Alien10, 925);
+            alien10.state = alienState.Normal;
+            Alien10.Source = AlienPics[0];
+            Alien10.Visibility = Visibility.Visible;
+
+           
+        }
     }
 }
