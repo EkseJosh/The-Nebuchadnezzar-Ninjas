@@ -105,6 +105,12 @@
     <Resource Include="SpaceShip One.png" />
     <Resource Include="SpaceShip Two.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="5mW-650nm-Red-Beam-Light-Singlepoint-Rechargeable-Laser-Pointer-Pen-Red_10_nologo_600x600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Black.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
