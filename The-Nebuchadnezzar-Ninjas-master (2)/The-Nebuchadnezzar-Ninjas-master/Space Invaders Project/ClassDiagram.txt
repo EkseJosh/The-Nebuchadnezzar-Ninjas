@@ -1,0 +1,42 @@
+Class Diagram Space Invaders:
+class spaceship
+{
+int Lives
+enum boosters
+double XVelocity
+
+}
+class aliens
+{
+
+enum state(colour change) {weakened,normal}
+double XVelocity
+enum boostes
+
+
+}
+class boss alien
+{
+int Lives
+enum Boosters
+double XVelocity
+double YVelocity
+string state
+
+
+}
+
+Methods: Dispatcher timer:
+         Detection
+         Movement of images
+         Update screen: lives,score
+
+Implement:
+events,classes,files,timers,enumerators,generic
+         
+         
+         
+public enum boosters { shield, bulletSpeed, bulletNum,MovementSpeed, }
+
+
+
