@@ -12,3 +12,11 @@ C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Proj
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.csproj.GenerateResource.Cache
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.exe
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.pdb
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameStartScreen.g.cs
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameStartScreen.baml
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\App.baml
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameOverScreen.g.cs
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameOverScreen.baml
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\WinnerScreen.g.cs
+C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\WinnerScreen.baml

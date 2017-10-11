@@ -5,17 +5,23 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using Microsoft.VisualBasic;
+using System.IO;
 
 namespace Space_Invaders_Project
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+   
     public partial class MainWindow : Window
     {
         int level;
         DispatcherTimer timer;
-
+         
+        string PlayerName;
         Aliens alien1;
         Aliens alien2;
         Aliens alien3;
@@ -26,10 +32,12 @@ namespace Space_Invaders_Project
         Aliens alien8;
         Aliens alien9;
         Aliens alien10;
+        public List<string> scoreList = new List<string>() { };
+        public int score;
 
         SpaceShip ship;
         bool isShot = false;
-
+        
         double SpaceshipXPos = 563; // left of spaceship relative to canvas (starting).
         double SpaceShipYPos = 510; // top of spaceship image relative to canvas...Must Not be changed.
 
@@ -37,9 +45,9 @@ namespace Space_Invaders_Project
         int velocityY = 3; // alien velocity variables
         int velocityX = 3;
 
-        int score = 0;
+        
         BitmapImage[] AlienPics;
-        // This is tells C# to find the images "in this application" ...
+       
 
 
 
@@ -47,13 +55,15 @@ namespace Space_Invaders_Project
         public MainWindow()
         {
             InitializeComponent();
-           
+            
+            score = 0;
+
             level = 1;
 
             Canvas.SetLeft(SpaceShip, SpaceshipXPos);
             Canvas.SetTop(SpaceShip, SpaceShipYPos);
 
-
+            PlayerName = Interaction.InputBox("ENTER YOUR PLAYERNAME");
 
 
             // update screen Timer
@@ -124,9 +134,16 @@ namespace Space_Invaders_Project
             }
            if(ship.lives ==0)
             {
-
+                SpaceLife1.Visibility = Visibility.Hidden;
                 resetPositions();
                 timer.IsEnabled = false;
+                GetScores();
+                updateScore();
+                sendScore();
+                new GameOverScreen(score,scoreList).Visibility = Visibility.Visible;
+               
+                Visibility = Visibility.Hidden;
+
 
             }
         }
@@ -145,7 +162,7 @@ namespace Space_Invaders_Project
                 
                 txtStageNum.Text = $" STAGE {level}";
                 
-                timer.IsEnabled = true;
+                
 
 
 
@@ -885,5 +902,125 @@ namespace Space_Invaders_Project
 
            
         }
+
+        public void UpdateScoreList()
+        {
+
+            
+
+
+            int i = 10;
+            while(i>0)
+
+            {
+                if(i == 1)
+
+                {
+                    scoreList[i] = Convert.ToString(score);
+                    scoreList[i - 1] = PlayerName;
+                    break;
+                }
+               else if( (scoreList[i] == null && scoreList[i-2] != null) || (scoreList[i] == "" && scoreList[i - 2] != "") )
+                {
+
+                    scoreList[i] = Convert.ToString(score);
+                    scoreList[i - 1] = PlayerName;
+                    break;
+                }
+                else if( (scoreList[i] == null && scoreList[i - 2] == null) || (scoreList[i] == "" && scoreList[i - 2] == ""))
+                {
+                    i -= 2;
+
+                }
+                else if (score > Convert.ToInt32(scoreList[i]) && score < Convert.ToInt32(scoreList[i - 2]))
+                {
+                    scoreList[i] = Convert.ToString(score);
+                    scoreList[i - 1] = PlayerName;
+                    break;
+
+                }
+                else if (score > Convert.ToInt32(scoreList[i]) && score > Convert.ToInt32(scoreList[i - 2]))
+                {
+                    i -= 2;
+
+                }
+
+                else
+                {
+                    break;
+                }
+
+            }
+               
+
+            }
+        public void sendScore()
+
+        {
+            
+                StreamWriter writer = File.CreateText("HighScores");
+                int i = 0;
+                while (i < scoreList.Count)
+                {
+                    writer.WriteLine($"{scoreList[i]},{scoreList[i + 1]}");
+                    i += 2;
+                }
+                writer.Close();
+
+           
+            
+            
+
+
+        }
+        public void GetScores()
+        {
+            if(File.Exists("HighScores"))
+            {
+
+                StreamReader reader = new StreamReader("HighScores");
+                int i = 0;
+
+                while (i < 10)
+                {
+                    if (reader.ReadLine() == "")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        string[] temp = reader.ReadLine().Split(',');
+                        scoreList[i] = temp[0];
+                        scoreList[i + 1] = temp[1];
+
+                    }
+
+                }
+           
+
+                
+
+                
+
+            }
+            else
+            {
+                for (int i = 0; i < scoreList.Count; i++)
+                {
+
+                    scoreList[i] = "";
+                    i++;
+
+                }
+            }
+
+
+        }
+
+        
     }
-}
+
+       
+
+    }
+

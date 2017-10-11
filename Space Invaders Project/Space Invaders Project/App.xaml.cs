@@ -13,5 +13,8 @@ namespace Space_Invaders_Project
     /// </summary>
     public partial class App : Application
     {
-    }
+
+       
+       
+         }
 }

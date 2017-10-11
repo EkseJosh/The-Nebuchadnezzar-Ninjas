@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_Invaders_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="649.5" Width="1350" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+        Title="SpaceNiggas" Height="649.5" Width="1350" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -45,14 +45,14 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="BossLevel_1" Height="263" Canvas.Left="474" Canvas.Top="187" Width="294" Source="SachinBoss1.png" Stretch="Fill" StretchDirection="DownOnly"/>
+            <Image x:Name="BossLevel_1" Height="263" Canvas.Left="375" Canvas.Top="121" Width="294" Source="SachinBoss1.png" Stretch="Fill" StretchDirection="DownOnly"/>
         </Canvas>
         <Image x:Name="SpaceLife1" HorizontalAlignment="Left" Height="49" Margin="2,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
         <Image x:Name="SpaceLife2" HorizontalAlignment="Left" Height="49" Margin="45,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
         <Image x:Name="SpaceLife3" HorizontalAlignment="Left" Height="49" Margin="87,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
         <Label x:Name="lblLife" Content="LIVES" HorizontalAlignment="Left" Margin="5,170,0,0" VerticalAlignment="Top" Height="40" Width="214" Background="#FF615A5A" FontSize="20" Grid.Column="2"/>
-        <TextBox x:Name="txtScore" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="4,90,0,0" TextWrapping="Wrap" Text="SCORE: 0" VerticalAlignment="Top" Width="214" Background="#FF231E1E" FontSize="24" BorderBrush="Black"/>
-        <TextBox x:Name="txtStageNum" TextWrapping="Wrap" Text="STAGE 1" Background="#FF443F3F" FontWeight="Bold" FontSize="36" FontFamily="Showcard Gothic" Grid.Column="2" Margin="5,10,0,550" BorderBrush="Black" IsReadOnly="True"/>
+        <TextBox x:Name="txtStageNum" TextWrapping="Wrap" Text="STAGE 1" Background="#FF443F3F" FontWeight="Bold" FontSize="36" FontFamily="Showcard Gothic" Grid.Column="2" Margin="5,0,-5,563" BorderBrush="Black" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtScore" Grid.Column="2" HorizontalAlignment="Left" Height="71" Margin="5,99,-5,0" TextWrapping="Wrap" Text="SCORE: 0" VerticalAlignment="Top" Width="219" Background="#FF231E1E" FontSize="24" BorderBrush="Black" IsReadOnly="True" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
