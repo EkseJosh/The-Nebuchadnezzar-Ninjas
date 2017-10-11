@@ -12,11 +12,18 @@ C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Proj
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.csproj.GenerateResource.Cache
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.exe
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.pdb
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameStartScreen.g.cs
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameStartScreen.baml
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\App.baml
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameOverScreen.g.cs
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\GameOverScreen.baml
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\WinnerScreen.g.cs
-C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\WinnerScreen.baml
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\bin\Debug\Space Invaders Project.exe.config
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.exe
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.pdb
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\bin\Debug\Space Invaders Project.exe
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\bin\Debug\Space Invaders Project.pdb
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\bin\Debug\ThinkLib.dll
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.csprojResolveAssemblyReference.cache
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\MainWindow.g.cs
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\App.g.cs
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project_MarkupCompile.cache
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project_MarkupCompile.lref
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\MainWindow.baml
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.g.resources
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space_Invaders_Project.Properties.Resources.resources
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.csproj.GenerateResource.Cache

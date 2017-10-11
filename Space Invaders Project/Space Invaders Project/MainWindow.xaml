@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_Invaders_Project"
         mc:Ignorable="d"
-        Title="SpaceNiggas" Height="649.5" Width="1350" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="MainWindow" Height="649.5" Width="1350" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -13,7 +13,7 @@
             <ColumnDefinition Width="219*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="SpaceCanvas" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="1113" Margin="0,10,0,0" Grid.ColumnSpan="2">
+        <Canvas x:Name="SpaceCanvas" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="1094" Margin="10,10,0,0" Grid.ColumnSpan="2">
             <Image x:Name="Alien1" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="425" Canvas.Top="9"/>
             <Image x:Name="Alien3" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="209" Canvas.Top="10"/>
             <Image x:Name="Alien4" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="100" Source="Gold Alien.png" Canvas.Left="525" Canvas.Top="10"/>
@@ -35,7 +35,28 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="laser" Height="388" Canvas.Left="588" Canvas.Top="55" Width="23" ClipToBounds="True" Stretch="Fill" Source="5mW-650nm-Red-Beam-Light-Singlepoint-Rechargeable-Laser-Pointer-Pen-Red_10_nologo_600x600.png" StretchDirection="DownOnly" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <Image x:Name="BossLevel_1" Height="263" Canvas.Left="414" Canvas.Top="17" Width="294" Source="SachinBoss1.png" Stretch="Fill" StretchDirection="DownOnly" Visibility="Hidden"/>
+            <Image x:Name="Alien11" Height="87" Canvas.Left="10" Canvas.Top="102" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien12" Height="87" Canvas.Left="109" Canvas.Top="102" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien13" Height="87" Canvas.Left="209" Canvas.Top="102" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien14" Height="87" Canvas.Left="314" Canvas.Top="102" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien15" Height="87" Canvas.Left="425" Canvas.Top="102" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien16" Height="87" Canvas.Left="525" Canvas.Top="101" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien17" Height="87" Canvas.Left="625" Canvas.Top="97" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien18" Height="87" Canvas.Left="725" Canvas.Top="96" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien19" Height="87" Canvas.Left="825" Canvas.Top="97" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien20" Height="87" Canvas.Left="925" Canvas.Top="97" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien21" Height="87" Canvas.Left="10" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien22" Height="87" Canvas.Left="109" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien23" Height="87" Canvas.Left="209" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien24" Height="87" Canvas.Left="314" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien25" Height="87" Canvas.Left="425" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien26" Height="87" Canvas.Left="525" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien27" Height="87" Canvas.Left="625" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien28" Height="87" Canvas.Left="725" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien29" Height="87" Canvas.Left="825" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="Alien30" Height="87" Canvas.Left="925" Canvas.Top="193" Width="100" Source="Gold Alien.png" Visibility="Hidden"/>
+            <Image x:Name="laser" ClipToBounds="True" Stretch="Fill" Source="5mW-650nm-Red-Beam-Light-Singlepoint-Rechargeable-Laser-Pointer-Pen-Red_10_nologo_600x600.png" StretchDirection="DownOnly" RenderTransformOrigin="0.5,0.5" Height="388" Canvas.Left="586" Canvas.Top="133" Width="23">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -45,14 +66,13 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="BossLevel_1" Height="263" Canvas.Left="375" Canvas.Top="121" Width="294" Source="SachinBoss1.png" Stretch="Fill" StretchDirection="DownOnly"/>
         </Canvas>
         <Image x:Name="SpaceLife1" HorizontalAlignment="Left" Height="49" Margin="2,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
         <Image x:Name="SpaceLife2" HorizontalAlignment="Left" Height="49" Margin="45,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
         <Image x:Name="SpaceLife3" HorizontalAlignment="Left" Height="49" Margin="87,229,0,0" VerticalAlignment="Top" Width="56" Source="SpaceShip One.png" Grid.Column="2"/>
-        <Label x:Name="lblLife" Content="LIVES" HorizontalAlignment="Left" Margin="5,170,0,0" VerticalAlignment="Top" Height="40" Width="214" Background="#FF615A5A" FontSize="20" Grid.Column="2"/>
-        <TextBox x:Name="txtStageNum" TextWrapping="Wrap" Text="STAGE 1" Background="#FF443F3F" FontWeight="Bold" FontSize="36" FontFamily="Showcard Gothic" Grid.Column="2" Margin="5,0,-5,563" BorderBrush="Black" IsReadOnly="True" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtScore" Grid.Column="2" HorizontalAlignment="Left" Height="71" Margin="5,99,-5,0" TextWrapping="Wrap" Text="SCORE: 0" VerticalAlignment="Top" Width="219" Background="#FF231E1E" FontSize="24" BorderBrush="Black" IsReadOnly="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtStageNum" TextWrapping="NoWrap" Text="STAGE 1" Background="#FF443F3F" FontWeight="Bold" FontSize="36" FontFamily="Showcard Gothic" Grid.Column="2" Margin="0,10,0,574" BorderBrush="Black" IsReadOnly="True"/>
+        <TextBox x:Name="txtScore" Grid.Column="2" HorizontalAlignment="Left" Height="59" Margin="0,90,0,0" TextWrapping="Wrap" Text="SCORE: 0" VerticalAlignment="Top" Width="219" Background="#FF231E1E" FontSize="24" BorderBrush="Black"/>
+        <Label x:Name="lblLife" Content="LIVES" HorizontalAlignment="Left" Margin="0,170,0,0" VerticalAlignment="Top" Height="40" Width="219" Background="#FF615A5A" FontSize="20" Grid.Column="2"/>
 
     </Grid>
 </Window>

@@ -12,3 +12,6 @@ C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Proj
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.csproj.GenerateResource.Cache
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.exe
 C:\Users\Joshua Martin\Documents\Visual Studio 2015\Projects\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.pdb
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\Space Invaders Project\bin\Debug\Space Invaders Project.exe.config
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.exe
+C:\Users\Sach\Downloads\The-Nebuchadnezzar-Ninjas-master (3)\The-Nebuchadnezzar-Ninjas-master\Space Invaders Project\Space Invaders Project\Space Invaders Project\obj\Debug\Space Invaders Project.pdb

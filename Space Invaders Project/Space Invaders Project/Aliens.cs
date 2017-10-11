@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 namespace Space_Invaders_Project
 {
     public enum alienState { Normal,Weakened}
-    class Aliens
+    public class Aliens
     {
 
         public int lives { get; set; }
+        public double velocityX { get; set; }
+        public double velocityY { get; set; }
        
         public alienState state {get;set;}
-        public List<boosters> powerUps { get; set; } // keeps track of how many boosters are active
+       
 
-        public Aliens()
+        public Aliens(double velX,double velY)
         {
             lives = 2;
             
             state = alienState.Normal;
-            powerUps = new List<boosters>();
+            velocityX = velX;
+            velocityY = velY;
 
         }
 

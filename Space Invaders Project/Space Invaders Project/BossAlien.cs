@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Space_Invaders_Project
 {
-    class BossAlien
+    public class BossAlien
     {
         public int lives { get; set; }
+        public double velocityX { get; set; }
        
        
-
-        public BossAlien()
+        public BossAlien(double velX)
         {
-
-            lives = 0;
+            lives = 5;
+           
+            velocityX = velX;
 
         }
 
