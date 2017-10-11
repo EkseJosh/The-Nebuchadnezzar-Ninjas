@@ -8,7 +8,7 @@ namespace Space_Invaders_Project
 {
     public enum boosters {shield,bulletSpeed,bulletNum,movementSpeed }
     public enum Movement { Left,Right,Stopped}
-    class SpaceShip
+   public class SpaceShip
     {
     public int lives { get; set; }
         public double velocityX { get; set; }
